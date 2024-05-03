@@ -20,13 +20,13 @@ int main() {
             break;
         }
 
-        if (strcmp(input,"minisystem") == 0){
+        if (strcmp(input,"minisystem") == 0){//fsadf
             minisystem();
         }
         else system(input);
     }
 
-    // 메모리 해제합니다..ㅇㅇㅇ
+    // 메모리 해제합니다..ㅇㅇㅇff
     free(input);
     print_minios("[MiniOS SSU] MiniOS Shutdown........");
 
