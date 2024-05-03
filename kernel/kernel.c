@@ -26,7 +26,7 @@ int main() {
         else system(input);
     }
 
-    // 메모리 해제합니다..
+    // 메모리 해제합니다..jgh
     free(input);
     print_minios("[MiniOS SSU] MiniOS Shutdown........");
 
