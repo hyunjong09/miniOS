@@ -30,7 +30,7 @@ int main(int ac, char *av[], int sourcefd, int destfd) {
         }
         else if(!strcmp(av[0], "exit"))
         {
-            printf("mini Shell commend exit...");
+            printf("mini OS exit... \n");
             cmd_exit();
         }
 
