@@ -9,15 +9,16 @@
 
 void print_minios(char* str);
 
-int main() {
+int main(int ac, char *av[], int sourcefd, int destfd) {
     print_minios("[MiniOS SSU] Hello, World!");
 
-    char *input;
+    char *path;
 
     while(1) {
-        pritnf("[SSU OS 8팀] :");
+        printf("[SSU OS 8팀] :");
         // readline을 사용하여 입력 받기
-        input = readline("커맨드를 입력하세요(종료:exit) : ");
+        av[0] = readline("커맨드를 입력하세요(종료:exit) : ");
+        // cd
         if(!strcmp(av[0], "cd"))
         {
             cmd_cd(ac, av);
@@ -27,51 +28,20 @@ int main() {
         {
             cmd_ls(ac, av);
         }
-        // cp
-        else if(!strcmp(av[0], "cp"))
-        {
-            cmd_cp(ac, av);
-        }
-        // rm
-        else if(!strcmp(av[0], "rm"))
-        {
-            cmd_rm(ac, av);
-        }
-        // mv
-        else if(!strcmp(av[0], "mv"))
-        {
-            cmd_mv(ac, av);
-        }
-        // mkdir
-        else if(!strcmp(av[0], "mkdir"))
-        {
-            cmd_mkdir(ac, av);
-        }
-        // rmdir
-        else if(!strcmp(av[0], "rmdir"))
-        {
-            cmd_rmdir(ac, av);
-        }
-        // cat
-        else if(!strcmp(av[0], "cat"))
-        {
-            cmd_cat(ac, av);
-        }
-        // exit
         else if(!strcmp(av[0], "exit"))
         {
             printf("mini Shell commend exit...");
             cmd_exit();
         }
 
-        else if (strcmp(input,"minisystem") == 0){//fsadf
+        else if (strcmp(av[0],"minisystem") == 0){//fsadf
                 minisystem();
         }
-        else system(input);
+        else system(av[0]);
     }
 
     // 메모리 해제합니다..jgh
-    free(input);
+    free(av[0]);
     print_minios("[MiniOS SSU] MiniOS Shutdown........");
 
     return(1);
