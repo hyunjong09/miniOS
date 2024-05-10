@@ -264,3 +264,27 @@ void cmd_cat(int ac, char *av[])
 
 	fclose(fp);
 }
+
+void cmd_touch(int ac, char *av[])
+{
+    FILE *fp;
+
+    if(ac < 2)
+    {
+        fprintf(stderr, "Not enough arguments.\n");
+        return;
+    }
+
+    if((fp = fopen(av[1], "a")) == NULL)
+    {
+        fprintf(stderr, "Failed to create or open file.\n");
+        return;
+    }
+
+    fclose(fp);
+
+    if(check_arg(av, "-v"))
+    {
+        printf("touch %s\n", av[1]);
+    }
+}

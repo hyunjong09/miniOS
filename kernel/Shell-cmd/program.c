@@ -122,6 +122,9 @@ BOOLEAN shellcmd(int ac, char *av[], int sourcefd, int destfd)
     {
         minisystem();
     }
+	else if (!strcmp(av[0], "touch") == 0) {
+        cmd_touch(ac, av);
+    }
 	else
 	{
 		return FALSE;
